@@ -1,0 +1,615 @@
+/* Buttons */
+
+body
+	overflow-x: hidden
+
+
+.btn
+	padding 18px 50px
+	border-width 2px
+	border-style solid
+	display inline-block
+	normalize-line-height()
+
+.btn-default
+	background white-colour
+	border: none
+	color default-colour
+		
+	&:hover
+		background blue-colour
+		border-color blue-colour
+		color default-colour
+		border: none
+
+	
+	&.btn-border
+		color default-colour
+		
+		&:hover
+			background default-colour
+			border-color default-colour
+			color white-colour
+
+.btn-primary
+	background blue-colour
+	border none
+	color black
+	
+	&:hover
+		background pink-colour
+
+
+.btn-secondary
+	background secondary-colour
+	border-color secondary-colour
+	color white-colour
+	
+	&:hover
+		background default-colour
+		border-color default-colour
+		color white-colour
+		
+	&.btn-border
+		color secondary-colour
+
+		&:hover
+			background secondary-colour
+			border-color secondary-colour
+			color white-colour
+			
+.btn-white
+	background white-colour
+	border-color white-colour
+	color default-colour
+	
+	&:hover
+		background default-colour
+		border-color default-colour
+		color white-colour
+		
+	&.btn-border
+		color white-colour
+
+		&:hover
+			background secondary-colour
+			border-color secondary-colour
+			color white-colour
+			
+.btn-border
+	background transparent
+
+.btn-block
+	display block
+	text-align center
+
+input[type="submit"]
+input[type="button"]
+button
+	@extends .btn
+	@extends .btn-default
+	transition main-transition-seconds
+
+/* Move Up Toggle */
+#move-up-toggle
+	position fixed
+	bottom 10px
+	right 10px
+	color white-colour
+	height 50px
+	width 50px
+	line-height 52px
+	transition main-transition-seconds
+	text-align center
+	background default-colour
+	display none
+	z-index 997
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15)
+
+	&:hover
+		background blue-colour
+		color: default-colour
+
+/* Input Tooltip */
+.tooltip
+	position relative
+
+	.tooltip-text
+		visibility hidden
+		background-color #333
+		color white-colour
+		text-align center
+		border-radius 6px
+		padding 5px 10px
+		position absolute
+		z-index 1
+		bottom 109%
+		left 30%
+		margin-left -60px
+		opacity 0
+		transition opacity 0.3s
+
+		&:after
+			content ""
+			position absolute
+			top: 100%
+			left 50%
+			margin-left -5px
+			border-width 5px
+			border-style solid
+			border-color #333 transparent transparent transparent
+
+	&:hover
+		.tooltip-text
+			visibility visible
+			opacity 1
+
+/* Testimonial */
+.testimonial
+	&.style
+		padding 30px
+		background default-colour
+		
+		.heading
+			color white-colour
+
+		.content
+			color white-colour
+
+		.details
+			span
+				&.name
+				&.date
+					font-weight 600
+					color white-colour
+
+	.details
+		overflow hidden
+
+		span
+			float left
+			margin-right 20px
+			
+			&.rating
+				color #FD0
+			
+			&:last-of-type
+				margin-right 0
+
+/* Title Bar */
+#title-bar
+	padding-top 60px
+	padding-bottom 60px
+
+	.title-bar-heading
+		margin 0
+		color white-colour
+		
+	.title-bar-subheading
+		color white-colour
+		margin-top 20px
+		normalize-line-height()
+		
+	.breadcrumb
+		margin-top 25px
+		
+	.post-details
+		margin-bottom 25px
+
+/* Breadcrumb */
+.breadcrumb
+	overflow hidden
+	display inline-block
+	
+	li
+		display inline-block
+		float left
+		margin 0
+		
+		a
+			color white-colour
+			
+			&:hover
+				color default-colour
+		
+		&.active
+			color white-colour
+			font-weight 600
+			
+	> li + li:before
+		content "/\00a0"
+		display inline-block
+		float left
+		margin-right 0
+		padding 0 7px 0 10px
+		color #CCC
+		margin-top -2px
+
+/* Blog Post Details */
+.post-details
+	li
+		color white-colour
+
+/* Blog Share */
+.share-post
+	padding 20px 30px
+	background default-colour
+
+	.heading
+		margin 12px 0
+		color white-colour
+		
+	ul
+		li
+			a
+				height 50px
+				width 50px
+				line-height 58px
+				background white-colour
+				color default-colour
+				border-radius 50%
+				display block
+				text-align center
+				
+				&:hover
+					background secondary-colour
+					color white-colour
+
+				i
+					color inherit
+					margin-right 0
+
+/* Blog Articles */
+.more-articles
+	padding 30px 30px 0
+	background grey-colour
+	
+	.heading
+		font-size 2.1em
+		margin 0 0 30px
+	
+	.article
+		margin-bottom 30px
+
+		.article-heading
+			margin 0 0 5px
+			
+			a
+				color secondary-colour
+				
+				&:hover
+					color default-colour
+		
+		.date
+			color #AAA
+			
+		.content
+			normalize-line-height()
+			margin-top 10px
+
+/* Previous / Next Post Buttons */
+.prev-next-post-button
+	.title
+		font-size 1.3em
+		font-weight 600
+		display block
+		margin-bottom 10px
+	
+	&:hover
+		color secondary-colour
+
+/* Action Boxes */
+.action-box
+	text-align center
+	padding 60px 40px
+	margin 30px 0
+	
+	&.bg-c-default
+		.btn:hover
+			background white-colour
+			border-color white-colour
+			color default-colour
+			
+	&.action-box-form
+		text-align left
+		padding 40px
+		
+		form
+			.form-input
+				border-color white-colour
+				color white-colour
+				+input-placeholder()
+					color #E5E5E5
+				
+				&:focus
+					border-color secondary-colour !important
+			
+			.form-submit
+				background secondary-colour
+				border-color secondary-colour
+				
+				&:hover
+					background white-colour
+					border-color white-colour
+					color default-colour
+
+	.heading
+		color white-colour
+		margin-bottom 15px
+		font-size 2em
+		
+	.content
+		color white-colour
+		margin 0 0 20px
+
+
+
+#page
+	&.popup
+		padding-bottom: 65px
+
+.pp-pop-up
+	padding: 10px 0
+	background: default-colour
+	position: fixed
+	z-index 99999
+	bottom: 0
+	left: 0
+	width: 100%
+	p
+		color: #FFF
+		margin: 10px 0
+		font-size: 15px
+	a
+		color: #FFF
+		text-decoration: underline
+		&:hover
+			color: blue-colour
+	.close
+		height: 35px
+		width: 35px
+		line-height: 35px
+		text-align: center
+		background: secondary-colour
+		color: primary-colour
+		display: block
+		float: right
+		margin-top: 5px
+		border-radius: 50%
+		text-decoration: none
+		&:hover
+			color: #FFF
+			background: #222
+
+#move-up-toggle
+	&.popup
+		bottom: 75px
+
+
+
+.wave {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.wave svg {
+	position: relative;
+	display: block;
+	width: calc(140% + 1.3px);
+	height: 71px;
+}
+
+.wave .shape-fill {
+	fill: #FFFFFF;
+}
+
+
+.green
+	width: 100%
+	height: 20px
+	background: blue-colour
+
+.pink
+	width: 100%
+	height: 20px
+	background: pink-colour
+
+.purple
+	width: 100%
+	height: 20px
+	background: purple
+
+
+.service-box
+	margin-right: 25px
+
+	a
+		display: inline-block
+
+
+.slick-track
+	width: 760px
+
+
+// Faq
+
+.faq {
+	margin-bottom: 20px;
+}
+.faq.faq-link .question-wrapper {
+	display: block;
+	padding: 25px 85px 22px 22px;
+	background: secondary-colour;
+	position: relative;
+	border: 1px solid blue-colour;
+	cursor: pointer
+}
+.faq.faq-link .question-wrapper .question {
+	color: white-colour;
+	font-size: 1.14em;
+	transition: 0.6s;
+	font-weight: 500;
+}
+.faq.faq-link .question-wrapper:after {
+	content: "\ea4c";
+	font-family: "remixicon";
+	height: 100%;
+	width: 68px;
+	text-align: center;
+	line-height: 68px;
+	color: blue-colour;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.8em;
+	transition: 0.6s;
+	border-left: 1px solid blue-colour;
+}
+.faq.faq-link .answer-wrapper .answer {
+	background: default-colour;
+	padding: 20px 22px;
+	border: 1px solid #000;
+	border-top: none;
+}
+.faq.faq-link.active .question-wrapper,
+.faq.faq-link:hover .question-wrapper {
+	background: #000;
+	border: 1px solid pink-colour
+}
+.faq.faq-link.active .question-wrapper .question,
+.faq.faq-link:hover .question-wrapper .question {
+	color: #fff;
+}
+.faq.faq-link.active .question-wrapper:after,
+.faq.faq-link:hover .question-wrapper:after {
+	transition: all 400ms ease-in-out
+	content: "\ea76";
+	color: pink-colour;
+	border-left: 1px solid pink-colour
+}
+.faq:last-child {
+	margin-bottom: 0 !important;
+}
+
+.answer-wrapper
+	position relative
+	padding: 25px
+	background: default-colour
+
+	&:after
+		position absolute
+		content: ''
+		top: 50%
+		transform: translateY(-50%)
+		height: 50%
+		width: 4px
+		left: 0
+		background: pink-colour
+
+
+.service-box-link
+		position relative
+
+		.data-img
+			overflow: hidden
+			img
+				transition: all 500ms ease-in-out
+				&:hover
+					transform: scale(1.3)
+
+.p-10
+	padding: 10px 0
+
+
+
+.image-large
+	width: 576px
+
+.image-small
+	width: 490px
+
+
+.m-l-auto
+	margin-left auto
+
+
+.m-r-auto
+	margin-right auto
+
+
+.border-b-pink
+	border-bottom: 5px solid pink-colour
+
+.border-b-blue
+	border-bottom: 5px solid blue-colour
+
+.border-b-purple
+	border-bottom: 5px solid purple-colour
+
+
+.hide-title-bar
+	display: none
+
+
+.f-c-pink
+	color: pink-colour
+
+.f-c-green
+	color: blue-colour
+
+.f-c-purple
+	color: purple-colour
+
+
+.slick-slider .slick-arrow.prev-treatment
+	left: -96px
+	top: 50%
+	transform: translateY(-50%)
+
+.slick-slider .slick-arrow.next-treatment
+	right: -74px
+	top: 50% 
+	transform: translateY(-50%) 
+
+
+.treatments
+	.slick-dots
+		bottom: -55px
+
+
+.scroll-fade-in
+	opacity: 0
+	transform: translateY(0px)
+
+
+.fade-in.appear 
+	opacity: 1
+
+
+.from-left
+	transform: translateX(-50%)
+	transition: transform 400ms ease
+
+.from-right
+	transform: translateX(50%)
+	transition: transform 400ms ease
+
+.from-left,
+.from-right
+	transition: opacity 400ms ease-in, 
+	transform 500ms ease-in-out
+	opacity: 0
+
+
+.from-left.appear,
+.from-right.appear
+	transform:  translateX(0)
+	opacity: 1
+
+
+
+

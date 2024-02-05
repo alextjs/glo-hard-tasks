@@ -1,0 +1,87 @@
+// Form Styles
+form
+	input[type="text"]
+	input[type="week"]
+	input[type="url"]
+	input[type="time"]
+	input[type="tel"]
+	input[type="password"]
+	input[type="search"]
+	input[type="number"]
+	input[type="email"]
+	input[type="date"]
+	select
+	textarea
+		border-bottom: 2px solid white-colour
+		padding 15px
+		transition main-transition-seconds !important
+		
+		&.wpcf7-not-valid
+			border-color error-bg-colour !important
+			
+		&:focus
+			border-bottom: 2px solid blue-colour !important
+
+	textarea
+		min-width 100%
+		max-width 100%
+		min-height 120px
+		max-height 200px
+		margin-bottom -7px
+
+	select
+		background url('/images/svgs/select-arrow.svg')
+		background-position 96% 50%
+		background-repeat no-repeat
+
+	input[type="submit"]
+	button
+		transition main-transition-seconds !important
+
+	button[type="submit"]
+		background-color: white-colour
+		color: default-colour
+		transition: all 400ms ease
+		outline: none
+		border none
+
+		&:hover
+			background: pink-colour
+			color: default-colour 
+	
+	textarea::placeholder
+	input::placeholder
+		color: white-colour
+		
+
+.form-group
+	margin-bottom 15px
+	
+	&:last-of-type
+		margin-bottom 0
+
+.form-repsonse
+	> div
+		padding 15px
+		text-align center
+		margin-top 15px
+		
+		&.error
+			background error-bg-colour
+			color error-text-colour
+
+		&.success
+			background success-bg-colour
+			color success-text-colour
+			
+
+.wpcf7-response-output
+	padding: 15px;	
+	background: #f00;	
+	color: #fff	
+
+.anr_captcha_field
+	>div
+		text-align: center
+		>div
+			margin: auto
